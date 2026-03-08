@@ -21,6 +21,8 @@
  */
 #pragma once
 
+
+
 #ifndef BOARD_INFO_NAME
   #define BOARD_INFO_NAME "BTT SKR V1.4"
 #endif
@@ -49,16 +51,9 @@
 //
 // Limit Switches
 //
-#ifdef X_STALL_SENSITIVITY
-  #define X_STOP_PIN                  X_DIAG_PIN
-  #if X_HOME_DIR < 0
-    #define X_MAX_PIN                      P1_26  // E0DET
-  #else
-    #define X_MIN_PIN                      P1_26  // E0DET
-  #endif
-#else
-  #define X_STOP_PIN                       P1_29  // X-STOP
-#endif
+#define X_STOP_PIN                         P1_29  // X-STOP
+#define X_MIN_PIN                          P1_29
+#define X_MAX_PIN                          P1_26  // E0DET
 
 #ifdef Y_STALL_SENSITIVITY
   #define Y_STOP_PIN                  Y_DIAG_PIN
@@ -81,7 +76,7 @@
 #else
   #ifndef Z_STOP_PIN
     #define Z_STOP_PIN                     Z_DIAG_PIN  // Z-STOP
-    #define Z_MAX_PIN P1_00 
+    #define Z_MAX_PIN P1_00
     #endif
 #endif
 
